@@ -1,23 +1,10 @@
 /**
  * MENU LOADER & ACTIVE STATE MANAGER
- * Uses AutoMenuGenerator for dynamic menu rendering
+ * Uses AutoMenuGenerator for dynamic navigation highlighting and animations
  */
 
+// Global Scroll Reveal Animations
 document.addEventListener('DOMContentLoaded', () => {
-    // Import the auto-menu generator (loaded as separate file)
-    
-    // Run after DOM is ready and menu is injected
-    setTimeout(() => {
-        const generator = new AutoMenuGenerator();
-        
-        // Re-highlight active items (in case they weren't set correctly on initial load)
-        generator.highlightActiveItem();
-        
-        // Re-initialize mobile menu toggle
-        generator.initMobileMenu();
-    }, 100);
-
-    // Global Scroll Reveal Animations
     const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
