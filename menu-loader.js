@@ -3,7 +3,7 @@
  * Uses AutoMenuGenerator for dynamic navigation highlighting and animations
  */
 
-// Global Scroll Reveal Animations
+// Global Scroll Reveal Animations (non-menu functionality)
 document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
     const observer = new IntersectionObserver((entries) => {
