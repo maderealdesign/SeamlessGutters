@@ -217,7 +217,7 @@
    216|   216|                        </div>
    217|   217|                    </div>
    218|   218|                    <div class="reveal reveal-delay-200 group relative aspect-square overflow-hidden rounded-lg sm:rounded-xl bg-gray-800">
-   219|   219|                        <img src="/images/photo-white-building-pink-hydrangeas-garden.webp" alt="Gutter installation work 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100" />
+   219|   219|                        <img src="/images/gallery-3.png" alt="Gutter installation work 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100" />
    220|   220|                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4 sm:p-6">
    221|   221|                            <span class="text-white font-heading font-bold text-sm sm:text-lg">Recent Completion</span>
    222|   222|                            <span class="text-brand-green text-xs sm:text-sm">Seamless Aluminium</span>
