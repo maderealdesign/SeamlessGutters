@@ -41,13 +41,13 @@ class AutoMenuGenerator {
 
         return `
             <!-- Desktop Menu -->
-            <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center">
+            <nav id="navbar" class="flex space-x-6 lg:space-x-8 items-center bg-white shadow-sm py-4">
                 ${desktopNav}
             </nav>
 
             <!-- Mobile Menu Button -->
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-green focus:outline-none p-2">
+            <div class="md:hidden flex items-center justify-center py-3">
+                <button id="mobile-menu-btn" class="text-gray-600 hover:text-brand-green focus:outline-none p-2 bg-white rounded-lg shadow-sm">
                     <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -55,24 +55,83 @@ class AutoMenuGenerator {
             </div>
 
             <!-- Mobile Menu Panel -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl pb-4">
-                <div class="px-4 pt-2 space-y-1 overflow-y-auto max-h-[80vh]">
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t-2 border-brand-green shadow-xl">
+                <div class="px-4 pt-3 pb-4 space-y-2 overflow-y-auto max-h-[70vh]">
                     ${mobileMenu}
                 </div>
             </div>
 
-            <style>
+            <style id="menu-inline-styles">
+                /* Ensure menu is visible */
+                #navbar {
+                    width: 100%;
+                    background: white;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                    position: relative;
+                    z-index: 50;
+                }
+
                 /* Mobile menu transition */
                 #mobile-menu {
-                    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                    position: fixed;
+                    top: 64px;
+                    left: 0;
+                    right: 0;
+                    max-height: 70vh;
+                    overflow-y: auto;
+                    z-index: 51;
                 }
-                #mobile-menu.hidden {
-                    max-height: 0;
-                    opacity: 0;
+
+                /* Link styling */
+                #navbar a {
+                    color: #2d3748;
+                    font-weight: 600;
+                    transition: all 0.2s ease;
                 }
-                #mobile-menu:not(.hidden) {
-                    max-height: 80vh;
-                    opacity: 1;
+                
+                #navbar a:hover,
+                #navbar .active {
+                    color: #2EC8A0 !important;
+                }
+
+                /* CTA button styling */
+                .bg-gradient-brand {
+                    background: linear-gradient(135deg, #2EC8A0 0%, #15803d 100%) !important;
+                    color: white !important;
+                    font-weight: bold !important;
+                    padding: 0.625rem 1.5rem !important;
+                }
+
+                /* Dropdown styling */
+                .group > button {
+                    display: flex;
+                    align-items: center;
+                    gap: 4px;
+                    color: #2d3748;
+                    font-weight: 600;
+                }
+                
+                .group:hover > div {
+                    display: flex !important;
+                }
+
+                /* Mobile menu items */
+                #mobile-menu a {
+                    display: block;
+                    padding: 0.75rem 1rem;
+                    color: #2d3748;
+                    font-weight: 600;
+                    border-radius: 6px;
+                }
+
+                #mobile-menu a:hover {
+                    background-color: #f7fafc;
+                    color: #2EC8A0 !important;
+                }
+
+                /* Active state in mobile menu */
+                .text-brand-green {
+                    color: #2EC8A0 !important;
                 }
             </style>
         `;
